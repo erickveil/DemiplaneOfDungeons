@@ -17,6 +17,7 @@ public:
     QString Name;
     int Tier;
     int Frequency;
+    int Qty;
 
     EncounterType Type;
     QList<Environment> EnvironmentList;

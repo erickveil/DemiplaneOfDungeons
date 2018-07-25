@@ -12,17 +12,21 @@ class EncounterGrouping
     GroupComposition _composition;
     Difficulty _difficultyLevel;
     MonsterFamily _monsterPool;
+    QList<Monster> _roster;
 
 public:
     EncounterGrouping();
 
-    QList<Monster> createEncounterMonsters();
+    QList<Monster> createEncounterMonsters(int tier, Environment environ);
+    Difficulty getDifficulty();
+    QList<Monster> getRoster();
+    bool isNull();
 
     GroupComposition pickComp();
     Difficulty pickDifficulty(GroupComposition comp);
-    MonsterFamily pickFamily();
-    Monster pickBoss();
-    Monster pickMook();
+    MonsterFamily pickFamily(int tier, Environment environ);
+    Monster pickBoss(MonsterFamily family, GroupComposition comp);
+    Monster pickMook(MonsterFamily family, GroupComposition comp);
 
 
 };
