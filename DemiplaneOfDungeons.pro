@@ -13,8 +13,14 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    monster.cpp \
+    monsterfamily.cpp \
+    encountergrouping.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    monster.h \
+    monsterfamily.h \
+    encountergrouping.h
 
 FORMS    += mainwindow.ui
