@@ -2,6 +2,7 @@
 #define ENCOUNTERGROUPING_H
 
 #include "monsterfamily.h"
+#include "dice.h"
 
 enum GroupComposition {NullComp, SoloMook, SoloBoss, BossWithMooks, MookGroup};
 

@@ -16,11 +16,17 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     monster.cpp \
     monsterfamily.cpp \
-    encountergrouping.cpp
+    encountergrouping.cpp \
+    dice.cpp \
+    tableentry.cpp \
+    randomtable.cpp
 
 HEADERS  += mainwindow.h \
     monster.h \
     monsterfamily.h \
-    encountergrouping.h
+    encountergrouping.h \
+    dice.h \
+    tableentry.h \
+    randomtable.h
 
 FORMS    += mainwindow.ui
