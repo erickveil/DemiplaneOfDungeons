@@ -3,10 +3,9 @@
 
 #include "monsterfamily.h"
 #include "dice.h"
+#include "randomtable.h"
 
-enum GroupComposition {NullComp, SoloMook, SoloBoss, BossWithMooks, MookGroup};
 
-enum Difficulty {NullDifficulty, Easy, Moderate, Hard, Deadly};
 
 class EncounterGrouping
 {

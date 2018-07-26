@@ -11,10 +11,27 @@ class TableEntry
     int _weight;
 
 public:
-    TableEntry();
-    TableEntry(Thing result, int weight);
-    Thing result() const;
-    int weight() const;
+    TableEntry()
+    {
+
+    }
+
+    TableEntry(Thing result, int weight)
+    {
+        _result = result;
+        _weight = weight;
+    }
+
+    Thing result() const
+    {
+        return _result;
+    }
+
+    int weight() const
+    {
+        return _weight;
+    }
 };
+
 
 #endif // TABLEENTRY_H

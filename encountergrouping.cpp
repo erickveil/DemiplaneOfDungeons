@@ -42,7 +42,14 @@ bool EncounterGrouping::isNull()
 
 GroupComposition EncounterGrouping::pickComp()
 {
-    return NullComp;
+    RandomTable<GroupComposition> table;
+
+    table.addEntry(SoloMook, 4);
+    table.addEntry(SoloBoss, 1);
+    table.addEntry(BossWithMooks, 2);
+    table.addEntry(MookGroup, 8);
+
+    return table.getRollTableEntry();
 }
 
 Difficulty EncounterGrouping::pickDifficulty(GroupComposition comp)
