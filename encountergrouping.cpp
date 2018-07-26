@@ -54,7 +54,26 @@ GroupComposition EncounterGrouping::pickComp()
 
 Difficulty EncounterGrouping::pickDifficulty(GroupComposition comp)
 {
-    return NullDifficulty;
+    RandomTable<Difficulty> table;
+
+    if (comp == SoloMook) {
+        table.addEntry(Easy, 2);
+        table.addEntry(Moderate);
+    }
+    else if (comp == SoloBoss) {
+        table.addEntry(Moderate);
+        table.addEntry(Hard, 2);
+    }
+    else if (comp == BossWithMooks) {
+        table.addEntry(Hard);
+        table.addEntry(Deadly);
+    }
+    else if (comp == MookGroup) {
+        table.addEntry(Easy);
+        table.addEntry(Moderate);
+    }
+
+    return table.getRollTableEntry();
 }
 
 MonsterFamily EncounterGrouping::pickFamily(int tier, Environment environ)
