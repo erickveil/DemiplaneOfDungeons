@@ -6,6 +6,10 @@
 class MonsterFamily
 {
 public:
+    QString FamilyName;
+    int Tier;
+    int Frequency;
+
     Monster Boss;
     Monster Seargent;
     Monster Mook;

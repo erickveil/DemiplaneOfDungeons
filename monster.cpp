@@ -5,10 +5,10 @@ Monster::Monster()
 
 }
 
-Monster::Monster(QString name, int tier, int frequency,
+Monster::Monster(QString name, int tier,
                  EncounterType encounterType,
                  QList<Environment> environmentList) :
-    Name(name), Tier(tier), Frequency(frequency), Type(encounterType),
+    Name(name), Tier(tier), Type(encounterType),
     EnvironmentList(environmentList)
 {
 

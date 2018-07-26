@@ -78,6 +78,7 @@ Difficulty EncounterGrouping::pickDifficulty(GroupComposition comp)
 
 MonsterFamily EncounterGrouping::pickFamily(int tier, Environment environ)
 {
+    // TODO: Flesh out monster and family factories a little before coming back
     MonsterFamily family;
     return family;
 }

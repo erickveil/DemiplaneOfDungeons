@@ -10,15 +10,14 @@ class Monster
 {
 public:
     QString Name;
-    int Tier;
-    int Frequency;
     int Qty;
+    int Tier;
 
     EncounterType Type;
     QList<Environment> EnvironmentList;
 
     Monster();
-    Monster(QString name, int tier, int frequency, EncounterType encounterType,
+    Monster(QString name, int tier, EncounterType encounterType,
             QList<Environment> environmentList);
     bool isNull();
 };
