@@ -9,12 +9,14 @@
 
 enum GroupComposition {NullComp, SoloMook, SoloBoss, BossWithMooks, MookGroup};
 enum Difficulty {NullDifficulty, Easy, Moderate, Hard, Deadly};
-enum EncounterType {NullEncounterType, Individual, Family, Maleable, Mix, Npc};
+enum EncounterType {NullEncounterType, Individual, Family, Maleable, Mix, Npc,
+                    Boss};
 enum Environment {NullEnvironment, Dungeon, Underdark, Urban, Roads, Grasslands,
                   Coastal, Hill, Forest, Mountain, Swamp, Desert, Tundra, Demon,
                   Devil, Fiend, Fey, Elemental, Earth, Air, Fire, Water,
                   Ethereal, Astral, Guardian, Magical, Construct, Undead,
-                  Shadow, Divine, Law, Chaos};
+                  Shadow, Divine, Law, Chaos, Sea, Good, Evil, OuterPlanes,
+                  InnerPlanes};
 
 /**
  * RandomTable

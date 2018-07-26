@@ -12,13 +12,14 @@ public:
     QString Name;
     int Qty;
     int Tier;
+    QString Source;
 
     EncounterType Type;
     QList<Environment> EnvironmentList;
 
     Monster();
     Monster(QString name, int tier, EncounterType encounterType,
-            QList<Environment> environmentList);
+            QList<Environment> environmentList, QString source);
     bool isNull();
 };
 

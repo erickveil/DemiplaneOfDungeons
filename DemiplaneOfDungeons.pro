@@ -11,6 +11,8 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 TARGET = DemiplaneOfDungeons
 TEMPLATE = app
 
+CONFIG += c++14
+
 
 SOURCES += main.cpp\
         mainwindow.cpp \
@@ -19,7 +21,8 @@ SOURCES += main.cpp\
     encountergrouping.cpp \
     dice.cpp \
     tableentry.cpp \
-    randomtable.cpp
+    randomtable.cpp \
+    monsterfactory.cpp
 
 HEADERS  += mainwindow.h \
     monster.h \
@@ -27,6 +30,7 @@ HEADERS  += mainwindow.h \
     encountergrouping.h \
     dice.h \
     tableentry.h \
-    randomtable.h
+    randomtable.h \
+    monsterfactory.h
 
 FORMS    += mainwindow.ui
