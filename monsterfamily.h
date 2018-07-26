@@ -9,6 +9,7 @@ public:
     QString FamilyName;
     int Tier;
     int Frequency;
+    QList<Environment> EnvironmentList;
 
     Monster Boss;
     Monster Seargent;

@@ -74,6 +74,11 @@ public:
         return rollTable().result();
     }
 
+    int size()
+    {
+        return _possibleEntries.size();
+    }
+
 private:
 
     void _addEntry(TableEntry <Thing> entry)

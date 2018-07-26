@@ -22,7 +22,8 @@ SOURCES += main.cpp\
     dice.cpp \
     tableentry.cpp \
     randomtable.cpp \
-    monsterfactory.cpp
+    monsterfactory.cpp \
+    familyfactory.cpp
 
 HEADERS  += mainwindow.h \
     monster.h \
@@ -31,6 +32,7 @@ HEADERS  += mainwindow.h \
     dice.h \
     tableentry.h \
     randomtable.h \
-    monsterfactory.h
+    monsterfactory.h \
+    familyfactory.h
 
 FORMS    += mainwindow.ui

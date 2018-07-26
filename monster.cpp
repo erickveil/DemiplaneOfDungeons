@@ -5,8 +5,7 @@ Monster::Monster()
 
 }
 
-Monster::Monster(QString name, int tier,
-                 EncounterType encounterType,
+Monster::Monster(QString name, int tier, EncounterType encounterType,
                  QList<Environment> environmentList, QString source) :
     Name(name), Tier(tier), Type(encounterType),
     EnvironmentList(environmentList), Source(source)

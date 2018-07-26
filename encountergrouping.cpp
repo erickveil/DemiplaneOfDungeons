@@ -16,9 +16,9 @@ QList<Monster> EncounterGrouping::createEncounterMonsters(int tier,
     MonsterFamily family = pickFamily(tier, environ);
     _monsterPool = family;
 
-    Monster boss = pickBoss(family, comp);
+    Monster boss = pickBoss(family);
     if (!boss.isNull()) { monsterList.append(boss); }
-    Monster mook = pickMook(family, comp);
+    Monster mook = pickMook(family);
     if (!mook.isNull()) { monsterList.append(mook); }
 
     _roster = monsterList;
@@ -78,20 +78,38 @@ Difficulty EncounterGrouping::pickDifficulty(GroupComposition comp)
 
 MonsterFamily EncounterGrouping::pickFamily(int tier, Environment environ)
 {
-    // TODO: Flesh out monster and family factories a little before coming back
-    MonsterFamily family;
-    return family;
+    QList<MonsterFamily> allFamilies = FamilyFactory::createFamilyList();
+    RandomTable<MonsterFamily> table;
+    for (int i = 0; i < allFamilies.size(); ++i) {
+        MonsterFamily family = allFamilies.at(i);
+        bool isCorrectTier = family.Tier == tier;
+        bool isCorrectEnviron = false;
+        for (int n = 0; n < family.EnvironmentList.size(); ++n) {
+            Environment environTest = family.EnvironmentList.at(n);
+            if (environTest != environ) { continue; }
+            isCorrectEnviron = true;
+            break;
+        }
+        if (isCorrectTier && isCorrectEnviron) {
+            table.addEntry(family, family.Frequency);
+        }
+    }
+
+    if (table.size() == 0) {
+        MonsterFamily nullFamily;
+        return nullFamily;
+    }
+
+    return table.getRollTableEntry();
 }
 
-Monster EncounterGrouping::pickBoss(MonsterFamily family, GroupComposition comp)
+Monster EncounterGrouping::pickBoss(MonsterFamily family)
 {
-    Monster boss;
-    return boss;
+    return family.Boss;
 }
 
-Monster EncounterGrouping::pickMook(MonsterFamily family, GroupComposition comp)
+Monster EncounterGrouping::pickMook(MonsterFamily family)
 {
-    Monster mook;
-    return mook;
+    return family.Mook;
 }
 
