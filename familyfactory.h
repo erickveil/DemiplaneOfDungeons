@@ -13,6 +13,8 @@ public:
 
     static QList<MonsterFamily> createFamilyList();
     static MonsterFamily createAarakocraFamily();
+    static MonsterFamily createAbolethFamily();
+    static MonsterFamily createAngelFamily();
 
 
 };

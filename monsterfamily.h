@@ -11,6 +11,7 @@ public:
     int Frequency;
     QList<Environment> EnvironmentList;
 
+    Monster Default;
     Monster Boss;
     Monster Seargent;
     Monster Mook;

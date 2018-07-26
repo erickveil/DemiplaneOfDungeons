@@ -21,6 +21,8 @@ QList<Monster> EncounterGrouping::createEncounterMonsters(int tier,
     Monster mook = pickMook(family);
     if (!mook.isNull()) { monsterList.append(mook); }
 
+    if (monsterList.size() == 0) { monsterList.append(family.Default); }
+
     _roster = monsterList;
     return monsterList;
 }
@@ -100,7 +102,9 @@ MonsterFamily EncounterGrouping::pickFamily(int tier, Environment environ)
         return nullFamily;
     }
 
-    return table.getRollTableEntry();
+    MonsterFamily selectedFamily = table.getRollTableEntry();
+
+    return selectedFamily;
 }
 
 Monster EncounterGrouping::pickBoss(MonsterFamily family)
